@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="location='http://localhost:8889/api-a/getUser'">显示人员</button>
+<input type="button" onclick='f()'  value="ajax显示成员"/>
+
+</body>
+<script>
+    
+    function f() {
+        alert("方法执行");
+        $.ajax({
+            type: "get",
+            url: "http://localhost:8889/api-a/getUser",
+            data: (),
+            dataType: 'json',
+
+            success: function (data) {
+                alert("ajax执行");
+               alert(data);
+
+            },
+            error: function (data) {
+                alert(data);
+            }
+
+
+
+        })
+    }
+</script>
+</html>
